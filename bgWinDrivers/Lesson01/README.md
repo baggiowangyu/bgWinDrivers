@@ -5,6 +5,7 @@
 ### 1.如何搭建开发环境 ###
 - 安装 Visual Studio 2008 SP1
 - 安装 Windows WDK 7
+	- 下载地址：[https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO](https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO "https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO")；
 	- 安装时全部安装，内置Windbg调试器
 	- 例如：安装到D盘，WDK路径会变为```D:\WinDDK\7600.16385.1```
 - 在系统中配置环境变量
@@ -56,3 +57,28 @@
 				- **```http://msdl.microsoft.com/download/symbols```**：表示微软符号服务器地址；
 	- 我们自行开发的驱动符号表：
 		- 将我们驱动匹配的PDB文件所在目录填入Windbg的**```Symbo Search Path```**对话框中;
+
+### 3.如何安装驱动 ###
+- 将我们编译好的驱动程序拷贝到**```C:\Windows\System32\drivers\```**目录下；
+- 运行项目中的工具**```srvman.exe```**
+- 点击**```Add service```**按钮，填写下面内容：
+	- **```Internal service name```**：填写我们期望的名称；
+	- **```User-visible name```**：填写我们期望的名称；
+	- **```Binary file path (Win32)```**：点击**```...```**按钮，找到我们的驱动文件，选择；
+	- **```Binary path (raw)```**：上面的字段选中后自动填写，这一段会写入注册表；
+	- **```Service type```**：这是服务类型，有下面几个选项：
+		- **```Filesystem driver```**：文件系统驱动；
+		- **```Device driver```**：设备驱动，【我们选这个】；
+		- **```Win32 own process```**：基本不用；
+		- **```Win32 shared process```**：基本不用；
+		- **```Win32 program as service via SrvMan```**：基本不用；
+	- **```Start mode```**：这是启动类型，有下面几个选项：
+		- **```Auto```**：自动模式，Service Control Manager模块启动的时候，驱动被加载并启动；
+		- **```Boot```**：引导模式，当系统被引导加载的时候，驱动被加载并启动；
+		- **```Manual```**：手动模式，当我们调用```StartService()```或使用```net start```命令时，驱动被加载并启动；
+		- **```Disabled```**：驱动被禁用；
+		- **```System```**：系统模式，当系统调用```IoInitSystem()```的时候，驱动被加载并启动；
+	- **```Load order group```**：随便填；
+- 服务被添加后，在服务列表找到该服务，点击```Start service```，驱动就会被加载启动了；
+
+### 4.如何调试驱动 ###
