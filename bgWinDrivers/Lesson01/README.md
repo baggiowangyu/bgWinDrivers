@@ -44,4 +44,15 @@
 	- 在快捷方式的 **```属性```** 中，**```目标```** 栏内追加写入： **```-b -k com:port=\\.\pipe\\com_1,baud=115200,pipe```**
 - 最后，设置Windbg的调试符号表（PDB文件）
 	- Windows系统符号表：
+		- 在微软官方网站下载各系统符号表
+			- 网站地址：[https://developer.microsoft.com/en-us/windows/hardware/download-symbols](https://developer.microsoft.com/en-us/windows/hardware/download-symbols "https://developer.microsoft.com/en-us/windows/hardware/download-symbols")；
+			- 下载好后进行符号安装；
+			- 最后将安装路径填入Windbg的**```Symbo Search Path```**对话框中;
+		- 在微软符号服务器自动下载调试过程中所需的符号表
+			- 配置方法：**```SRV*E:\symbols\websymbo*http://msdl.microsoft.com/download/symbols;```**；
+			- 配置说明：
+				- **```SRV```**：前缀，表示我们要从符号服务器自动下载；
+				- **```E:\symbols\websymbo```**：表示下载好的符号文件存放路径；
+				- **```http://msdl.microsoft.com/download/symbols```**：表示微软符号服务器地址；
 	- 我们自行开发的驱动符号表：
+		- 将我们驱动匹配的PDB文件所在目录填入Windbg的**```Symbo Search Path```**对话框中;
