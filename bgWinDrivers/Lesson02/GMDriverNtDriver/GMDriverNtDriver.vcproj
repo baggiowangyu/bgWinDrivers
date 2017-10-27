@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="GMDriverHelloWorld"
-	ProjectGUID="{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}"
-	RootNamespace="GMDriverHelloWorld"
+	Name="GMDriverNtDriver"
+	ProjectGUID="{060DAA19-53C1-40BD-8995-570B65ACBD6A}"
+	RootNamespace="GMDriverNtDriver"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -41,18 +41,13 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32=100;_X86_=1;DBG=1"
-				MinimalRebuild="false"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="0"
-				StructMemberAlignment="3"
-				BufferSecurityCheck="false"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				WarnAsError="true"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="1"
-				CallingConvention="2"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -65,20 +60,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ntoskrnl.lib"
-				OutputFile="$(OutDir)\$(ProjectName).sys"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(WDKROOT)\lib\wxp\i386"
-				EnableUAC="false"
-				IgnoreAllDefaultLibraries="true"
+				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				SubSystem="3"
-				StackReserveSize="400000"
-				StackCommitSize="10000"
-				Driver="1"
-				EntryPointSymbol="DriverEntry"
-				RandomizedBaseAddress="0"
-				DataExecutionPrevention="0"
+				SubSystem="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -186,39 +170,19 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath=".\DriverEntry.cpp"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="头文件"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath=".\DriverEntry.h"
-				>
-			</File>
-			<File
-				RelativePath=".\resource.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="资源文件"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-			<File
-				RelativePath=".\GMDriverHelloWorld.rc"
-				>
-			</File>
 		</Filter>
-		<File
-			RelativePath=".\GMDriverHelloWorld.inf"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>

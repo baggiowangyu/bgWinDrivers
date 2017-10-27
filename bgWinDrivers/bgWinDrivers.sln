@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "The last lesson：How to gi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMDriverHelloWorld", "Lesson01\GMDriverHelloWorld\GMDriverHelloWorld.vcproj", "{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMDriverNtDriver", "Lesson02\GMDriverNtDriver\GMDriverNtDriver.vcproj", "{060DAA19-53C1-40BD-8995-570B65ACBD6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -41,6 +43,10 @@ Global
 		{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}.Debug|Win32.Build.0 = Debug|Win32
 		{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}.Release|Win32.ActiveCfg = Release|Win32
 		{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}.Release|Win32.Build.0 = Release|Win32
+		{060DAA19-53C1-40BD-8995-570B65ACBD6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{060DAA19-53C1-40BD-8995-570B65ACBD6A}.Debug|Win32.Build.0 = Debug|Win32
+		{060DAA19-53C1-40BD-8995-570B65ACBD6A}.Release|Win32.ActiveCfg = Release|Win32
+		{060DAA19-53C1-40BD-8995-570B65ACBD6A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{DB744659-89E4-4868-BE5B-69D1D633746C} = {2B5A66E8-78E1-4592-8187-801BEA742287}
 		{E6B1DE88-8829-4D61-9E5E-393987CFE271} = {2B5A66E8-78E1-4592-8187-801BEA742287}
 		{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7} = {C676F3EE-B270-4EBC-8C92-66ED62CD5D28}
+		{060DAA19-53C1-40BD-8995-570B65ACBD6A} = {BDCC3D7A-68FD-4B69-8648-2C40C0B972AB}
 	EndGlobalSection
 EndGlobal
