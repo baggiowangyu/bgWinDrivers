@@ -23,10 +23,10 @@
 
 #include "DriverEntry.h"
 
-NTSTATUS DriverEntry(PDRIVER_OBJECT driver_object, IN PUNICODE_STRING  registry_path)
+NTSTATUS DriverEntry(IN PDRIVER_OBJECT driver_object, IN PUNICODE_STRING  registry_path)
 {
 	// 这是一个条件打印函数，只在Debug版打印，Release自动被屏蔽
-	KdPrint(("Hello World !"));
+	KdPrint(("[GMDriverHelloWorld] Hello World !"));
 
 	// 设置驱动对象的卸载例程
 	// 驱动在被停止的时候由系统内核调用卸载例程
@@ -35,7 +35,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT driver_object, IN PUNICODE_STRING  registry_
 	return STATUS_SUCCESS;
 }
 
-VOID DriverUnload(PDRIVER_OBJECT driver_object)
+VOID DriverUnload(IN PDRIVER_OBJECT driver_object)
 {
 
 }

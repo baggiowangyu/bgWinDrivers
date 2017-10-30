@@ -2,11 +2,11 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="GMDriverHelloWorld"
-	ProjectGUID="{E564A9E3-5DE7-4F41-9BB5-197A0D1302B7}"
-	RootNamespace="GMDriverHelloWorld"
+	Name="GMDriverNtDriverInstaller"
+	ProjectGUID="{A7E0F490-B0D4-4E64-B484-22A337CDD578}"
+	RootNamespace="GMDriverNtDriverInstaller"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="131072"
+	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
 		<Platform
@@ -41,18 +41,15 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_X86_;DBG;$(NOINHERIT)"
-				MinimalRebuild="false"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="0"
-				StructMemberAlignment="3"
-				BufferSecurityCheck="false"
-				UsePrecompiledHeader="0"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				StructMemberAlignment="0"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
-				WarnAsError="true"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="1"
-				CallingConvention="2"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -65,20 +62,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ntoskrnl.lib"
-				OutputFile="$(OutDir)\$(ProjectName).sys"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(WDKROOT)\lib\wxp\i386"
-				EnableUAC="false"
-				IgnoreAllDefaultLibraries="true"
+				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				SubSystem="3"
-				StackReserveSize="400000"
-				StackCommitSize="10000"
-				Driver="1"
-				EntryPointSymbol="DriverEntry"
-				RandomizedBaseAddress="0"
-				DataExecutionPrevention="0"
+				SubSystem="1"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -130,10 +116,10 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -150,7 +136,7 @@
 				Name="VCLinkerTool"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
-				SubSystem="2"
+				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"
@@ -187,8 +173,28 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\DriverEntry.cpp"
+				RelativePath=".\GMDriverNtDriverInstaller.cpp"
 				>
+			</File>
+			<File
+				RelativePath=".\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
@@ -197,11 +203,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\DriverEntry.h"
+				RelativePath=".\stdafx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\resource.h"
+				RelativePath=".\targetver.h"
 				>
 			</File>
 		</Filter>
@@ -210,13 +216,9 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-			<File
-				RelativePath=".\GMDriverHelloWorld.rc"
-				>
-			</File>
 		</Filter>
 		<File
-			RelativePath=".\GMDriverHelloWorld.inf"
+			RelativePath=".\ReadMe.txt"
 			>
 		</File>
 	</Files>
