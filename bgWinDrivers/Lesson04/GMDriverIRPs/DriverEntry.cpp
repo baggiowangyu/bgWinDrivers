@@ -126,98 +126,70 @@ NTSTATUS NtDriverDispatchFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 
 NTSTATUS NtDriverCreateFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 {
-	KdPrint(("[GMDriverNtDriver] NtDriverCreateFunction"));
 	if (device_object == global_device_object)
 	{
-		// 读写本设备对象
-		PIO_STACK_LOCATION io_stack_location = IoGetCurrentIrpStackLocation(irp);
-		if (io_stack_location == NULL)
-		{
-			irp->IoStatus.Status = STATUS_SUCCESS;
-			irp->IoStatus.Information = 0;
-
-			IoCompleteRequest(irp, IO_NO_INCREMENT);
-			return STATUS_SUCCESS;
-		}
+		KdPrint(("[GMDriverNtDriver] NtDriverCreateFunction"));
 	}
-	else
-	{
-		irp->IoStatus.Status = STATUS_SUCCESS;
-		irp->IoStatus.Information = 0;
 
-		IoCompleteRequest(irp, IO_NO_INCREMENT);
-		return STATUS_SUCCESS;
-	}
+	irp->IoStatus.Status = STATUS_SUCCESS;
+	irp->IoStatus.Information = 0;
+
+	IoCompleteRequest(irp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
 }
 
 NTSTATUS NtDriverCleanupFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 {
-	KdPrint(("[GMDriverNtDriver] NtDriverCleanupFunction"));
-
 	if (device_object == global_device_object)
 	{
-
+		KdPrint(("[GMDriverNtDriver] NtDriverCleanupFunction"));
 	}
-	else
-	{
-		irp->IoStatus.Status = STATUS_SUCCESS;
-		irp->IoStatus.Information = 0;
+	
+	irp->IoStatus.Status = STATUS_SUCCESS;
+	irp->IoStatus.Information = 0;
 
-		IoCompleteRequest(irp, IO_NO_INCREMENT);
-		return STATUS_SUCCESS;
-	}
+	IoCompleteRequest(irp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
 }
 
 NTSTATUS NtDriverCloseFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 {
-	KdPrint(("[GMDriverNtDriver] NtDriverCloseFunction"));
-
 	if (device_object == global_device_object)
 	{
-
+		KdPrint(("[GMDriverNtDriver] NtDriverCloseFunction"));
 	}
-	else
-	{
-		irp->IoStatus.Status = STATUS_SUCCESS;
-		irp->IoStatus.Information = 0;
+	
+	irp->IoStatus.Status = STATUS_SUCCESS;
+	irp->IoStatus.Information = 0;
 
-		IoCompleteRequest(irp, IO_NO_INCREMENT);
-		return STATUS_SUCCESS;
-	}
+	IoCompleteRequest(irp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
 }
 
 NTSTATUS NtDriverReadFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 {
-	KdPrint(("[GMDriverNtDriver] NtDriverReadFunction"));
-
 	if (device_object == global_device_object)
 	{
-		unsigned char *buffer = irp->AssociatedIrp.SystemBuffer;
+		KdPrint(("[GMDriverNtDriver] NtDriverReadFunction"));
 	}
-	else
-	{
-		irp->IoStatus.Status = STATUS_SUCCESS;
-		irp->IoStatus.Information = 0;
+	
+	irp->IoStatus.Status = STATUS_SUCCESS;
+	irp->IoStatus.Information = 0;
 
-		IoCompleteRequest(irp, IO_NO_INCREMENT);
-		return STATUS_SUCCESS;
-	}
+	IoCompleteRequest(irp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
 }
 
 NTSTATUS NtDriverWriteFunction(IN PDEVICE_OBJECT device_object, IN PIRP irp)
 {
-	KdPrint(("[GMDriverNtDriver] NtDriverWriteFunction"));
-
 	if (device_object == global_device_object)
 	{
-		unsigned char *buffer = irp->AssociatedIrp.SystemBuffer;
+		KdPrint(("[GMDriverNtDriver] NtDriverWriteFunction"));
 	}
-	else
-	{
-		irp->IoStatus.Status = STATUS_SUCCESS;
-		irp->IoStatus.Information = 0;
+	
+	irp->IoStatus.Status = STATUS_SUCCESS;
+	irp->IoStatus.Information = 0;
 
-		IoCompleteRequest(irp, IO_NO_INCREMENT);
-		return STATUS_SUCCESS;
-	}
+	IoCompleteRequest(irp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
 }
