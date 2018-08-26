@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMDriverCommunicate", "Less
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMDriverCommunicateTest", "Lesson05\GMDriverCommunicateTest\GMDriverCommunicateTest.vcproj", "{EBFFAC0E-6A96-48A1-A5B6-0324420D7087}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMMinifilterDriver_01", "Lesson12\GMMinifilterDriver_01\GMMinifilterDriver_01.vcproj", "{E9E968BB-09A4-4668-A030-FC10F809138C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -77,6 +79,10 @@ Global
 		{EBFFAC0E-6A96-48A1-A5B6-0324420D7087}.Debug|Win32.Build.0 = Debug|Win32
 		{EBFFAC0E-6A96-48A1-A5B6-0324420D7087}.Release|Win32.ActiveCfg = Release|Win32
 		{EBFFAC0E-6A96-48A1-A5B6-0324420D7087}.Release|Win32.Build.0 = Release|Win32
+		{E9E968BB-09A4-4668-A030-FC10F809138C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9E968BB-09A4-4668-A030-FC10F809138C}.Debug|Win32.Build.0 = Debug|Win32
+		{E9E968BB-09A4-4668-A030-FC10F809138C}.Release|Win32.ActiveCfg = Release|Win32
+		{E9E968BB-09A4-4668-A030-FC10F809138C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +108,6 @@ Global
 		{685DFF7B-2398-44A1-8423-763665341220} = {378254AD-E503-4831-9821-B5F6DC9B7F29}
 		{2443F790-5FDD-44CD-9498-054FAA00B1FB} = {FA464DA5-2CF6-45C2-83E4-C28496EAFDDB}
 		{EBFFAC0E-6A96-48A1-A5B6-0324420D7087} = {FA464DA5-2CF6-45C2-83E4-C28496EAFDDB}
+		{E9E968BB-09A4-4668-A030-FC10F809138C} = {DB744659-89E4-4868-BE5B-69D1D633746C}
 	EndGlobalSection
 EndGlobal
